@@ -1,0 +1,103 @@
+export const projects = [
+  {
+    slug: 'kiwi-ia',
+    name: 'Kiwi.ia',
+    kind: 'IA · Web',
+    tint: '#E8EDF7',
+    image: null,
+    summary: 'Asistente de IA con cuentas, historial y memoria por conversación. Entra con correo, Google o Apple.',
+    tagline: 'Un asistente de IA donde puedes preguntar lo que quieras y retomar cualquier conversación donde la dejaste.',
+    tech: ['Python', 'FastAPI', 'Claude API', 'Supabase', 'Vercel'],
+    demo: null,
+    repo: null,
+    meta: [
+      ['Rol', ''],
+      ['Duración', ''],
+      ['Stack', 'Python · FastAPI · Claude · Supabase'],
+      ['Estado', ''],
+    ],
+    problem: '',
+    architecture: [
+      { name: 'Navegador', note: 'Chat web, responsive' },
+      { name: 'FastAPI', note: 'Servidor Python en Vercel', primary: true },
+      [
+        { name: 'Claude API', note: 'Respuestas de la IA', tinted: true },
+        { name: 'Supabase', note: 'Cuentas (correo, Google, Apple) y conversaciones' },
+      ],
+    ],
+    decisions: [
+      ['Memoria por conversación', ''],
+      ['Privacidad con Supabase', ''],
+      ['Calidad desde el inicio', 'Tests con pytest, lint con ruff y tipado con mypy.'],
+    ],
+    learned: '',
+  },
+  {
+    slug: 'yeyi',
+    name: 'Yeyi',
+    kind: 'Web · Backend',
+    tint: '#F0F0F3',
+    image: null,
+    summary: 'Sistema de ventas e inventario: productos, categorías, empleados, métodos de pago y dashboard.',
+    tagline: 'Un sistema para administrar ventas, inventario y empleados de un negocio desde un solo lugar.',
+    tech: ['React', 'Vite', 'Express', 'PostgreSQL', 'JWT'],
+    demo: null,
+    repo: null,
+    meta: [
+      ['Rol', ''],
+      ['Duración', ''],
+      ['Stack', 'React · Express · PostgreSQL'],
+      ['Estado', ''],
+    ],
+    problem: '',
+    architecture: [
+      { name: 'React + Vite', note: 'Panel con Bootstrap y React Router' },
+      { name: 'API Express', note: 'REST por módulo: ventas, productos, empleados…', primary: true },
+      [
+        { name: 'PostgreSQL', note: 'Datos del negocio', tinted: true },
+        { name: 'JWT', note: 'Inicio de sesión y rutas protegidas' },
+      ],
+    ],
+    decisions: [
+      ['Módulos REST', 'Rutas, controladores y modelos separados por entidad: ventas, detalles, productos, categorías, empleados y pagos.'],
+      ['Autenticación con JWT', ''],
+      ['Dashboard', ''],
+    ],
+    learned: '',
+  },
+  {
+    slug: 'dots',
+    name: 'Dots',
+    kind: 'Móvil · iOS',
+    tint: '#F7F7F9',
+    image: null,
+    summary: 'App nativa de hábitos: cada día cumplido es un punto. Rachas, notas diarias y vistas por semana, mes y año.',
+    tagline: 'Una app minimalista de hábitos donde cada día cumplido se convierte en un punto.',
+    tech: ['Swift', 'SwiftUI', 'SwiftData'],
+    demo: null,
+    repo: null,
+    meta: [
+      ['Rol', ''],
+      ['Duración', ''],
+      ['Stack', 'Swift · SwiftUI · SwiftData'],
+      ['Estado', ''],
+    ],
+    problem: '',
+    architecture: [
+      { name: 'SwiftUI', note: 'Vistas: inicio, cuadrícula de dots, notas' },
+      { name: 'Modelos', note: 'Habit y Completion con SwiftData', primary: true },
+      [
+        { name: 'Rachas', note: 'Cálculo de días consecutivos', tinted: true },
+        { name: 'Periodos', note: 'Semana, mes y año' },
+      ],
+    ],
+    decisions: [
+      ['SwiftData', 'Cada hábito guarda sus días cumplidos; al borrar un hábito se borran sus días en cascada.'],
+      ['Rachas', ''],
+      ['Diseño minimalista', 'Interfaz en blanco y negro donde el progreso es lo único que destaca.'],
+    ],
+    learned: '',
+  },
+];
+
+export const getProject = (slug) => projects.find((p) => p.slug === slug);
