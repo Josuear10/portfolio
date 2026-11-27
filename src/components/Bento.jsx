@@ -26,7 +26,7 @@ export default function Bento() {
         <span className="tag">Mi experiencia</span>
         <ol className="timeline">
           {experience.map((e) => (
-            <li key={e.title + e.meta}>
+            <li key={e.title + e.meta} className={e.current ? 'is-current' : ''}>
               <strong>{e.title}</strong>
               <span>{e.meta}</span>
             </li>
@@ -50,6 +50,11 @@ export default function Bento() {
       <div className="card card--accent">
         <span className="tag tag--glass">Ahora mismo</span>
         <p className="now">{profile.now}</p>
+        {profile.nowTopics?.length > 0 && (
+          <ul className="now-topics">
+            {profile.nowTopics.map((t) => <li key={t}>{t}</li>)}
+          </ul>
+        )}
       </div>
     </section>
   );
